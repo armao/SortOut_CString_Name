@@ -103,7 +103,7 @@ void nameutile::capitalize(char argv[])
 void nameutile::trim_midle_names(char argv[])
 {
 	int total = count(argv);
-	int a = total - find_final(argv, total);
+	int a = find_final(argv, total);
 
 	for (int i = 1;i <= a; ++i) {
 		if (argv[i] != ' ' && argv[i - 1] == ' ' && argv[i + 1] != ' ')
