@@ -81,9 +81,9 @@ using namespace nameutile;
 
 void nameutile::capitalize(char argv[])
 {
-	int a = count(argv);
 	space_delete(argv, 0);
-
+    int a = count(argv);
+    
 	for (int i = 0; i < a;++i)
 	{
 		if (argv[i] != ' ')
@@ -103,9 +103,9 @@ void nameutile::capitalize(char argv[])
 void nameutile::trim_midle_names(char argv[])
 {
 	int total = count(argv);
-	int a =total - find_final(argv, total);
+	int a = total - find_final(argv, total);
 
-	for (int i = 1;i <= a; ++i) {
+	for (int i = 1;i <= a-1; ++i) {
 		if (argv[i] != ' ' && argv[i - 1] == ' ' && argv[i + 1] != ' ')
 		{
 			while (argv[i] != ' ' && argv[i - 1] == ' ' && argv[i + 1] != ' ' && i < a)
