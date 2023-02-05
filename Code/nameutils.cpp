@@ -71,7 +71,7 @@ void space_delete(char argv[], int on)
 int find_final(char argv[], int endIndex)
 {
 	int r = 0;
-	for (int w = 30; argv[w] != ' ' && argv[w - 1] != ' ';--w)
+	for (int w = endIndex; argv[w] != ' ' && argv[w - 1] != ' ';--w)
 	{
 		++r;
 	}
@@ -103,7 +103,7 @@ void nameutile::capitalize(char argv[])
 void nameutile::trim_midle_names(char argv[])
 {
 	int total = count(argv);
-	int a = find_final(argv, total);
+	int a =total - find_final(argv, total);
 
 	for (int i = 1;i <= a; ++i) {
 		if (argv[i] != ' ' && argv[i - 1] == ' ' && argv[i + 1] != ' ')
